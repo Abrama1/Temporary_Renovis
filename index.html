@@ -19,6 +19,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column; /* Added for vertical stacking */
             min-height: 100vh;
             color: #1f5d5c;
             overflow: hidden;
@@ -29,7 +30,7 @@
         /* Navbar styling */
         .navbar {
             width: 100%;
-            background-color: dedbc3;
+            background-color: #dedbc3; /* Fixed hex color code */
             position: absolute;
             top: 0;
             left: 0;
@@ -86,8 +87,8 @@
             animation: fadeSlideDown 1s ease-in-out 0.5s forwards;
         }
 
-        /* Social links at bottom */
-        .social-links {
+        /* Footer styling */
+        footer {
             position: absolute;
             bottom: 20px;
             left: 50%;
@@ -97,16 +98,16 @@
         }
 
         /* LinkedIn icon styling */
-        .social-links a {
+        footer a {
             color: #1f5d5c;
             text-decoration: none;
         }
 
-        .social-links img {
+        footer img {
             width: 30px;
         }
 
-        .social-links a:hover {
+        footer a:hover {
             opacity: 0.7;
         }
 
@@ -182,11 +183,11 @@
         <h2>Our website is under construction...</h2>
     </div>
 
-    <!-- LinkedIn Contact at the Bottom -->
-    <div class="social-links">
+    <!-- LinkedIn Contact in the Footer -->
+    <footer>
         <a href="https://www.linkedin.com/company/renovis-llc" target="_blank">
             <img src="Linkedin_LOGO.png" alt="LinkedIn Logo">
         </a>
-    </div>
+    </footer>
 </body>
 </html>
