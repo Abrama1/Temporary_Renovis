@@ -22,14 +22,17 @@
             align-items: center;
             min-height: 100vh;
             color: #1f5d5c;
-            padding: 10px;
+            padding: 20px;
         }
 
         /* Navbar styling */
         .navbar {
             width: 100%;
             background-color: #dedbc3;
-            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            left: 0;
+            padding: 20px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -37,29 +40,44 @@
         }
 
         .navbar .logo {
-            width: 80px;
+            width: 100px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul li a {
+            color: #1f5d5c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            color: #174a49;
         }
 
         /* Container styling */
         .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             text-align: center;
+            padding: 40px;
             width: 100%;
             max-width: 600px;
-            flex-grow: 1;
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         h2 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease-in-out;
         }
 
         /* Footer styling */
@@ -79,7 +97,7 @@
         }
 
         footer img {
-            width: 25px;
+            width: 30px;
             vertical-align: middle;
         }
 
@@ -87,8 +105,32 @@
             opacity: 0.7;
         }
 
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            .navbar ul {
+                gap: 15px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
             h1 {
                 font-size: 1.75rem;
             }
@@ -97,24 +139,15 @@
                 font-size: 1.1rem;
             }
 
-            .container {
-                padding: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            h2 {
-                font-size: 1rem;
-            }
-
             .navbar {
                 flex-direction: column;
-                padding: 10px;
+                padding: 15px;
                 text-align: center;
+            }
+
+            .navbar ul {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
@@ -123,6 +156,9 @@
     <!-- Navbar -->
     <nav class="navbar">
         <img src="Renovis_LOGO.png" alt="Company Logo" class="logo">
+        <ul>
+            <!-- Navigation items can go here -->
+        </ul>
     </nav>
 
     <!-- Main Content -->
