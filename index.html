@@ -37,6 +37,7 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
 
         .navbar .logo {
@@ -80,6 +81,55 @@
             animation: fadeIn 2s ease-in-out;
         }
 
+        /* Contact Section */
+        .contact-section {
+        background-color: #dedbc3; /* Background color */
+        padding: 40px 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+        width: 100%;
+        max-width: 100%;
+        text-align: left; /* Align content to the left */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+        }
+
+        .contact-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px; /* Add space between the heading and contact information */
+            color: #1f5d5c; /* Match text color */
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Add spacing between contact items */
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Space between icon and text */
+            font-size: 1.2rem;
+            color: #1f5d5c;
+        }
+
+        .contact-item img {
+            width: 30px; /* Icon size */
+            height: 30px;
+        }
+
+        .contact-item a {
+            text-decoration: none;
+            color: #1f5d5c; /* Text color */
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #174a49; /* Slightly darker shade on hover */
+        }
+
+
+
         /* Footer styling */
         footer {
             width: 100%;
@@ -89,9 +139,9 @@
 
         .footer-link {
             display: flex;
-            align-items: center; /* Align text and icons */
-            justify-content: center; /* Center the content horizontally */
-            gap: 10px; /* Add space between icon and text */
+            align-items: left;
+            justify-content: center;
+            gap: 10px;
             margin: 15px 0;
             text-decoration: none;
             color: #1f5d5c;
@@ -128,6 +178,14 @@
             .container {
                 padding: 20px;
             }
+
+            .contact-section h3 {
+                font-size: 1.75rem;
+            }
+
+            .contact-item {
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -149,7 +207,6 @@
                 flex-direction: column;
                 gap: 10px;
             }
-
         }
     </style>
 </head>
@@ -158,26 +215,50 @@
     <nav class="navbar">
         <img src="Renovis_LOGO.png" alt="Company Logo" class="logo">
         <ul>
-            <!-- Navigation items can go here -->
+            <li><a href="#home">Home</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Main Content -->
-    <div class="container">
+    <div class="container" id="home">
         <h1>Welcome to Renovis</h1>
         <h2>Engineering a Greener Future</h2>
     </div>
 
-    <!-- Footer with LinkedIn and Email -->
-    <footer>
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h3>Contact Us</h3>
+        <div class="contact-details">
+            <div class="contact-item">
+                <img src="Linkedin_LOGO.png" alt="LinkedIn Logo">
+                <a href="https://www.linkedin.com/company/renovis-llc" target="_blank">LinkedIn</a>
+            </div>
+            <div class="contact-item">
+                <img src="Email_LOGO.png" alt="Email Logo">
+                <a href="mailto:info@renovis.ge">info@renovis.ge</a>
+            </div>
+            <div class="contact-item">
+                <img src="Phone_LOGO.png" alt="Phone Logo">
+                <a href="tel:+995555233366">+995 555 23 33 66</a>
+            </div>
+        </div>
+    </section>      
+
+    <!-- Footer -->
+    <!-- <footer>
         <a href="https://www.linkedin.com/company/renovis-llc" class="footer-link" target="_blank">
             <img src="Linkedin_LOGO.png" alt="LinkedIn Logo">
-            Connect with us on LinkedIn
+            LinkedIn
         </a>
         <a href="mailto:info@renovis.ge" class="footer-link">
             <img src="Email_LOGO.png" alt="Email Logo">
-            Email us at info@renovis.ge
+            info@renovis.ge
         </a>
-    </footer>
+        <a href="tel:+995555233366" class="footer-link">
+            <img src="Phone_LOGO.png" alt="Phone Logo">
+            +995 555 23 33 66
+        </a>
+    </footer> -->
 </body>
 </html>
