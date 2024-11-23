@@ -85,23 +85,23 @@
             width: 100%;
             text-align: center;
             padding: 25px;
-            /* background-color: #dedbc3;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); */
         }
 
-        footer a {
-            color: #1f5d5c;
+        .footer-link {
+            display: flex;
+            align-items: center; /* Align text and icons */
+            justify-content: center; /* Center the content horizontally */
+            gap: 10px; /* Add space between icon and text */
+            margin: 15px 0;
             text-decoration: none;
-            display: inline-block;
-            margin: 10px 0;
+            color: #1f5d5c;
         }
 
-        footer img {
+        .footer-link img {
             width: 30px;
-            vertical-align: middle;
         }
 
-        footer a:hover {
+        .footer-link:hover {
             opacity: 0.7;
         }
 
@@ -168,10 +168,15 @@
         <h2>Engineering a Greener Future</h2>
     </div>
 
-    <!-- Footer with LinkedIn -->
+    <!-- Footer with LinkedIn and Email -->
     <footer>
-        <a href="https://www.linkedin.com/company/renovis-llc" target="_blank">
-            <img src="Linkedin_LOGO.png" alt="LinkedIn Logo"> Connect with us on LinkedIn
+        <a href="https://www.linkedin.com/company/renovis-llc" class="footer-link" target="_blank">
+            <img src="Linkedin_LOGO.png" alt="LinkedIn Logo">
+            Connect with us on LinkedIn
+        </a>
+        <a href="mailto:info@renovis.ge" class="footer-link">
+            <img src="Email_LOGO.png" alt="Email Logo">
+            Email us at info@renovis.ge
         </a>
     </footer>
 </body>
