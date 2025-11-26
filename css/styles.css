@@ -34,7 +34,7 @@ main {
     position: sticky;
     top: 0;
     left: 0;
-    padding: 16px 20px;
+    padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,7 +49,7 @@ main {
 
 .navbar .logo {
     width: 150px;
-    padding-bottom: 10px;
+    padding-bottom: 6px;
 }
 
 /* Desktop nav menu */
@@ -63,11 +63,38 @@ main {
     color: #1f5d5c;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s;
+    font-size: 0.95rem;
+    padding: 4px 0;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+/* Simple underline hover */
+.nav-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #1f5d5c;
+    transition: width 0.2s ease;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
 }
 
 .nav-menu li a:hover {
     color: #174a49;
+}
+
+/* Focus outlines (accessibility) */
+.nav-menu li a:focus-visible,
+.btn:focus-visible,
+.nav-toggle:focus-visible {
+    outline: 2px solid #1f5d5c;
+    outline-offset: 2px;
 }
 
 /* Hamburger button */
@@ -93,7 +120,7 @@ main {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 48px 20px;
 }
 
 /* Hero section */
@@ -137,7 +164,7 @@ main {
     font-weight: bold;
     font-size: 0.95rem;
     border: 2px solid transparent;
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
 }
 
 .btn-primary {
@@ -147,6 +174,7 @@ main {
 
 .btn-primary:hover {
     background-color: #174a49;
+    transform: translateY(-1px);
 }
 
 .btn-secondary {
@@ -158,6 +186,7 @@ main {
 .btn-secondary:hover {
     background-color: #1f5d5c;
     color: #dedbc3;
+    transform: translateY(-1px);
 }
 
 /* Generic section styling */
@@ -201,6 +230,12 @@ main {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
 .card-title {
@@ -226,6 +261,12 @@ main {
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     position: relative;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.step:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
 .step-number {
@@ -291,7 +332,7 @@ main {
 .contact-item a {
     text-decoration: none;
     color: #1f5d5c;
-    transition: color 0.3s;
+    transition: color 0.2s ease;
 }
 
 .contact-item a:hover {
@@ -333,7 +374,11 @@ footer {
     }
 
     .container {
-        padding: 30px 20px;
+        padding: 36px 20px;
+    }
+
+    .navbar .logo {
+        width: 130px;
     }
 
     .contact-section h3 {
@@ -351,7 +396,7 @@ footer {
 
     .nav-menu {
         position: absolute;
-        top: 64px; /* roughly navbar height */
+        top: 60px; /* roughly navbar height */
         right: 0;
         left: 0;
         background-color: #dedbc3;
@@ -381,6 +426,10 @@ footer {
     .steps-grid {
         grid-template-columns: 1fr;
     }
+
+    .navbar .logo {
+        width: 120px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -390,5 +439,9 @@ footer {
 
     .hero-subtitle {
         font-size: 0.95rem;
+    }
+
+    .container {
+        padding: 32px 16px;
     }
 }
