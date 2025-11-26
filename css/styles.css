@@ -77,27 +77,67 @@ main {
     text-align: center;
 }
 
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+.hero h1 {
+    font-size: 2.6rem;
+    margin-bottom: 20px;
     animation: fadeIn 1.5s ease-in-out;
 }
 
-h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+.hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto 25px auto;
     animation: fadeIn 2s ease-in-out;
 }
 
-h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
     animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    border: 2px solid transparent;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #1f5d5c;
+    color: #dedbc3;
+}
+
+.btn-primary:hover {
+    background-color: #174a49;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #1f5d5c;
+    border-color: #1f5d5c;
+}
+
+.btn-secondary:hover {
+    background-color: #1f5d5c;
+    color: #dedbc3;
 }
 
 /* Generic section styling */
 .section {
     width: 100%;
+}
+
+.section-alt {
+    background-color: rgba(222, 219, 195, 0.35);
 }
 
 .section-title {
@@ -106,10 +146,74 @@ h3 {
     text-align: left;
 }
 
-.section-text {
+.section-intro {
     font-size: 1rem;
+    margin-bottom: 25px;
     line-height: 1.6;
     text-align: left;
+}
+
+.section-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Cards (Services) */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #dedbc3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+/* Steps (Approach) */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.step {
+    background-color: #dedbc3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.step-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    opacity: 0.6;
+    margin-bottom: 8px;
+}
+
+.step-title {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.step-text {
+    font-size: 0.98rem;
+    line-height: 1.6;
 }
 
 /* Contact Section */
@@ -126,8 +230,14 @@ h3 {
 
 .contact-section h3 {
     font-size: 1.8rem;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     color: #1f5d5c;
+}
+
+.contact-intro {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
 }
 
 .contact-details {
@@ -140,7 +250,7 @@ h3 {
     display: flex;
     align-items: center;
     gap: 15px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #1f5d5c;
 }
 
@@ -174,16 +284,19 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width: 900px) {
+    .cards-grid,
+    .steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
+    .hero h1 {
+        font-size: 2.1rem;
     }
 
-    h2 {
-        font-size: 1.25rem;
-    }
-
-    h3 {
+    .hero-subtitle {
         font-size: 1rem;
     }
 
@@ -204,17 +317,20 @@ footer {
     }
 }
 
+@media (max-width: 600px) {
+    .cards-grid,
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 480px) {
-    h1 {
-        font-size: 1.75rem;
+    .hero h1 {
+        font-size: 1.8rem;
     }
 
-    h2 {
-        font-size: 1.1rem;
-    }
-
-    h3 {
-        font-size: 0.9rem;
+    .hero-subtitle {
+        font-size: 0.95rem;
     }
 
     .navbar {
