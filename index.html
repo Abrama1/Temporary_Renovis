@@ -12,8 +12,17 @@
         <header>
             <!-- Navbar -->
             <nav class="navbar">
-                <img src="Renovis_LOGO.png" alt="Renovis Logo" class="logo">
-                <ul>
+                <div class="nav-left">
+                    <img src="Renovis_LOGO.png" alt="Renovis Logo" class="logo">
+                </div>
+
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <ul id="nav-menu" class="nav-menu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>

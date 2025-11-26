@@ -6,6 +6,11 @@
     font-family: Arial, sans-serif;
 }
 
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
 /* Body & layout */
 body {
     background: linear-gradient(135deg, #dedbc3, #bdbaa0);
@@ -29,7 +34,7 @@ main {
     position: sticky;
     top: 0;
     left: 0;
-    padding: 20px 20px;
+    padding: 16px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,26 +42,50 @@ main {
     z-index: 1000;
 }
 
-.navbar .logo {
-    width: 150px;
-    padding-bottom: 20px;
+.nav-left {
+    display: flex;
+    align-items: center;
 }
 
-.navbar ul {
+.navbar .logo {
+    width: 150px;
+    padding-bottom: 10px;
+}
+
+/* Desktop nav menu */
+.nav-menu {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
-.navbar ul li a {
+.nav-menu li a {
     color: #1f5d5c;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
 }
 
-.navbar ul li a:hover {
+.nav-menu li a:hover {
     color: #174a49;
+}
+
+/* Hamburger button */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.nav-toggle .bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 4px 0;
+    background-color: #1f5d5c;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 /* Generic container */
@@ -284,6 +313,8 @@ footer {
 }
 
 /* Responsive Design */
+
+/* Medium screens: 2-column grids */
 @media (max-width: 900px) {
     .cards-grid,
     .steps-grid {
@@ -291,6 +322,7 @@ footer {
     }
 }
 
+/* Tablet & small desktops */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.1rem;
@@ -298,10 +330,6 @@ footer {
 
     .hero-subtitle {
         font-size: 1rem;
-    }
-
-    .navbar ul {
-        gap: 15px;
     }
 
     .container {
@@ -315,8 +343,39 @@ footer {
     .contact-item {
         font-size: 1rem;
     }
+
+    /* Show hamburger, hide desktop menu by default */
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 64px; /* roughly navbar height */
+        right: 0;
+        left: 0;
+        background-color: #dedbc3;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        transition: max-height 0.25s ease;
+    }
+
+    .nav-menu li {
+        padding: 6px 0;
+    }
+
+    .nav-menu.nav-menu--open {
+        max-height: 240px;
+        padding-bottom: 10px;
+    }
 }
 
+/* Phone screens */
 @media (max-width: 600px) {
     .cards-grid,
     .steps-grid {
@@ -331,16 +390,5 @@ footer {
 
     .hero-subtitle {
         font-size: 0.95rem;
-    }
-
-    .navbar {
-        flex-direction: column;
-        padding: 15px;
-        text-align: center;
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        gap: 10px;
     }
 }
