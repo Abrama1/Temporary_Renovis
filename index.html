@@ -4,276 +4,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Renovis</title>
-    <style>
-        /* Reset styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Body styling */
-        body {
-            background: linear-gradient(135deg, #dedbc3, #bdbaa0);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 100vh;
-            color: #1f5d5c;
-            padding: 20px;
-        }
-
-        /* Navbar styling */
-        .navbar {
-            width: 100%;
-            background-color: #dedbc3;
-            position: sticky;
-            top: 0;
-            left: 0;
-            padding: 20px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .navbar .logo {
-            width: 150px;
-            padding-bottom: 20px;
-        }
-
-        .navbar ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        .navbar ul li a {
-            color: #1f5d5c;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .navbar ul li a:hover {
-            color: #174a49;
-        }
-
-        /* Container styling */
-        .container {
-            text-align: center;
-            padding: 40px;
-            width: 100%;
-            max-width: 600px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            animation: fadeIn 2s ease-in-out;
-        }
-        
-        h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            animation: fadeIn 2.5s ease-in-out;
-        }
-        /* Contact Section */
-        .contact-section {
-        background-color: #dedbc3; /* Background color */
-        padding: 40px 20px;
-        border-radius: 10px;
-        margin: 20px 0;
-        width: 100%;
-        max-width: 100%;
-        text-align: left; /* Align content to the left */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
-        }
-
-        .contact-section h3 {
-            font-size: 1.8rem;
-            margin-bottom: 30px; /* Add space between the heading and contact information */
-            color: #1f5d5c; /* Match text color */
-        }
-
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 20px; /* Add spacing between contact items */
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px; /* Space between icon and text */
-            font-size: 1.2rem;
-            color: #1f5d5c;
-        }
-
-        .contact-item img {
-            width: 30px; /* Icon size */
-            height: 30px;
-        }
-
-        .contact-item a {
-            text-decoration: none;
-            color: #1f5d5c; /* Text color */
-            transition: color 0.3s;
-        }
-
-        .contact-item a:hover {
-            color: #174a49; /* Slightly darker shade on hover */
-        }
-
-
-
-        /* Footer styling */
-        footer {
-            width: 100%;
-            text-align: center;
-            padding: 25px;
-        }
-
-        .footer-link {
-            display: flex;
-            align-items: left;
-            justify-content: center;
-            gap: 10px;
-            margin: 15px 0;
-            text-decoration: none;
-            color: #1f5d5c;
-        }
-
-        .footer-link img {
-            width: 30px;
-        }
-
-        .footer-link:hover {
-            opacity: 0.7;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.25rem;
-            }
-
-            h3 {
-                font-size: 1rem;
-            }
-
-            .navbar ul {
-                gap: 15px;
-            }
-
-            .container {
-                padding: 20px;
-            }
-
-            .contact-section h3 {
-                font-size: 1.75rem;
-            }
-
-            .contact-item {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.75rem;
-            }
-
-            h2 {
-                font-size: 1.1rem;
-            }
-
-            h3 {
-                font-size: 0.9rem;
-            }
-
-            .navbar {
-                flex-direction: column;
-                padding: 15px;
-                text-align: center;
-            }
-
-            .navbar ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <img src="Renovis_LOGO.png" alt="Company Logo" class="logo">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="page-wrapper">
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar">
+                <div class="nav-left">
+                    <img src="Renovis_LOGO.png" alt="Renovis Logo" class="logo">
+                </div>
 
-    <!-- Main Content -->
-    <div class="container" id="home">
-        <h1>Welcome to Renovis</h1>
-        <h2>Engineering a Greener Future</h2>
-        <h3>Website is under construction</h3>
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <ul id="nav-menu" class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#approach">Approach</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Hero Section -->
+            <section class="hero" id="home">
+                <div class="container hero-container">
+                    <h1>Engineering a Greener Tomorrow</h1>
+                    <p class="hero-subtitle">
+                        Renovis is a renewable energy consultancy providing end-to-end design services,
+                        from pre-feasibility to detailed engineering, to help businesses transition
+                        confidently to clean energy.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">Contact Us</a>
+                        <a href="#about" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <main>
+            <!-- About Section -->
+            <section class="section" id="about">
+                <div class="container">
+                    <h2 class="section-title">About Renovis</h2>
+                    <p class="section-text">
+                        At Renovis, we are passionate about shaping a sustainable future through
+                        innovative renewable energy solutions. As a consultancy firm specializing in the
+                        renewable energy sector, we offer end-to-end design services tailored to meet the
+                        unique needs of our clients.
+                    </p>
+                    <p class="section-text">
+                        Our expertise spans all project phases, from pre-feasibility studies to detailed
+                        design, ensuring the delivery of efficient, reliable, and cost-effective solutions.
+                        We pride ourselves on combining technical excellence with a commitment to
+                        environmental stewardship, empowering businesses to transition to clean energy
+                        with confidence.
+                    </p>
+                    <p class="section-text">
+                        Whether you’re initiating your renewable energy journey or refining an existing
+                        project, Renovis is your trusted partner in engineering a greener tomorrow.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section class="section section-alt" id="services">
+                <div class="container">
+                    <h2 class="section-title">Our Services</h2>
+                    <p class="section-intro">
+                        We support your projects across the full lifecycle of renewable energy development.
+                    </p>
+                    <div class="cards-grid">
+                        <article class="card">
+                            <h3 class="card-title">Pre-feasibility &amp; Feasibility Studies</h3>
+                            <p class="card-text">
+                                Early-stage assessments to evaluate technical options, site potential,
+                                and project viability, helping you make informed investment decisions.
+                            </p>
+                        </article>
+                        <article class="card">
+                            <h3 class="card-title">Concept &amp; Detailed Design</h3>
+                            <p class="card-text">
+                                End-to-end design services, from conceptual layouts to detailed engineering,
+                                ensuring systems that are efficient, reliable, and compliant with standards.
+                            </p>
+                        </article>
+                        <article class="card">
+                            <h3 class="card-title">Optimization &amp; Advisory</h3>
+                            <p class="card-text">
+                                Performance reviews, upgrades, and technical advisory to improve existing
+                                assets and support long-term operational excellence.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Approach / Process Section -->
+            <section class="section" id="approach">
+                <div class="container">
+                    <h2 class="section-title">How We Work</h2>
+                    <p class="section-intro">
+                        A structured, collaborative approach to transform ideas into impactful energy systems.
+                    </p>
+                    <div class="steps-grid">
+                        <div class="step">
+                            <div class="step-number">01</div>
+                            <h3 class="step-title">Assess</h3>
+                            <p class="step-text">
+                                We analyze your goals, site conditions, and constraints to define the
+                                right renewable energy concept for your needs.
+                            </p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">02</div>
+                            <h3 class="step-title">Design</h3>
+                            <p class="step-text">
+                                Our engineers develop tailored system designs with a focus on performance,
+                                reliability, and cost-effectiveness.
+                            </p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">03</div>
+                            <h3 class="step-title">Deliver</h3>
+                            <p class="step-text">
+                                We support you through implementation, review, and optimization to ensure
+                                your project delivers long-term value.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="contact-section" id="contact">
+                <h3>Contact Us</h3>
+                <p class="contact-intro">
+                    Ready to discuss your renewable energy project? Get in touch with us:
+                </p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <img src="Linkedin_LOGO.png" alt="LinkedIn Logo">
+                        <a href="https://www.linkedin.com/company/renovis-llc" target="_blank">
+                            Follow us on LinkedIn
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <img src="Email_LOGO.png" alt="Email Logo">
+                        <a href="mailto:info@renovis.ge">info@renovis.ge</a>
+                    </div>
+                    <div class="contact-item">
+                        <img src="Phone_LOGO.png" alt="Phone Logo">
+                        <a href="tel:+995555233366">+995 555 23 33 66</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            © 2025 Renovis. All rights reserved.
+        </footer>
     </div>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <h3>Contact Us</h3>
-        <div class="contact-details">
-            <div class="contact-item">
-                <img src="Linkedin_LOGO.png" alt="LinkedIn Logo">
-                <a href="https://www.linkedin.com/company/renovis-llc" target="_blank">LinkedIn</a>
-            </div>
-            <div class="contact-item">
-                <img src="Email_LOGO.png" alt="Email Logo">
-                <a href="mailto:info@renovis.ge">info@renovis.ge</a>
-            </div>
-            <div class="contact-item">
-                <img src="Phone_LOGO.png" alt="Phone Logo">
-                <a href="tel:+995555233366">+995 555 23 33 66</a>
-            </div>
-        </div>
-    </section>      
-
-    <!-- Footer -->
-    <!-- <footer>
-        <a href="https://www.linkedin.com/company/renovis-llc" class="footer-link" target="_blank">
-            <img src="Linkedin_LOGO.png" alt="LinkedIn Logo">
-            LinkedIn
-        </a>
-        <a href="mailto:info@renovis.ge" class="footer-link">
-            <img src="Email_LOGO.png" alt="Email Logo">
-            info@renovis.ge
-        </a>
-        <a href="tel:+995555233366" class="footer-link">
-            <img src="Phone_LOGO.png" alt="Phone Logo">
-            +995 555 23 33 66
-        </a>
-    </footer> -->
 </body>
 </html>
